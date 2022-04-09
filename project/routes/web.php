@@ -17,5 +17,6 @@ Route::prefix('translations')->group(function() {
     Route::get('/delete/{id}',[listTranslationsController::class, "deleteTranslations"])->name("deleteTranslations");
     Route::get('/edit/{id}',[editTranslationsController::class, "editTranslations"])->name("editTranslations");
     Route::post('/edit/{id}',[editTranslationsController::class, "editTranslationsPost"])->name("editTranslationsPost");
+    Route::post('/view',[listTranslationsController::class, "viewTranslations"]);
 
 });

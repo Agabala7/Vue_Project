@@ -1,3 +1,5 @@
+const _token = $('meta[name="csrf-token"]').attr('content');
+
 const translateDelete = (id) => {
     
     swal({
@@ -14,5 +16,23 @@ const translateDelete = (id) => {
           swal("İmtina edildi!");
         }
       });
+}
+
+const translateView = (id) => {
+  
+  $.ajax({
+    type: "POST",
+    url: "/translations/view",
+    data: {
+      _token,
+      id
+    },
+    success: function (response) {
+      
+      document.getElementById('view_contents').innerHTML = response.contents;
+      $('#viewModal').modal('show')
+
+    }
+  });
 
 }

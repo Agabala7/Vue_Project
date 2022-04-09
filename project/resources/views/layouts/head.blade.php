@@ -20,7 +20,5 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/dashmix.min.css') }}" />
 
-    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
-    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css"> -->
-    <!-- END Stylesheets -->
+    <script src="https://cdn.tiny.cloud/1/scvngxld7kolvh817hw9omsrym0g2d96ke02f1jb08mz6ih1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>

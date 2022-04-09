@@ -26,5 +26,11 @@ class listTranslationsController extends Controller
         }
         return redirect()->back();
     }
-    
+
+    public function viewTranslations(Request $request) {
+        $translations = Translations::find($request->id);
+        return $translations ?? null;
+        if(!$translations) return redirect()->back()->with("not_found",true);
+    }
+
 }
