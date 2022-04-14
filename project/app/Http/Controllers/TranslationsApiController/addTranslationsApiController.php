@@ -8,21 +8,26 @@ use Illuminate\Http\Request;
 
 class addTranslationsApiController extends Controller
 {
+
+    public function addTranslate() {
+        return view('api');
+    }
+
     public function addTranslatePost(Request $request) {
-        // $request->validate([
-        //     'title'=>'required|max:255',
-        //     'contents'=>'required'
-        // ]);
+        $request->validate([
+            'title'=>'required|max:255',
+            'contents'=>'required'
+        ]);
 
-        // $data = Translations::create([
-        //     'title'=>$request->title,
-        //     'contents'=>$request->contents
-        // ]);
+        $data = Translations::create([
+            'title'=>$request->title,
+            'contents'=>$request->contents
+        ]);
 
-        // return $data ? response()->json([''],200) : response()->json([],403);
+        return $data ? response()->json(['message'=>'success',$data],201) : response()->json(['message'=>'error',$data],403);
         
-        // $data = Translations::create($this->validationFunk());
-        // return response()->json($data,201);
+        $data = Translations::create($this->validationFunk());
+        return response()->json($data,201);
     }
 
     // public function validationFunk() {
